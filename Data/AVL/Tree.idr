@@ -156,6 +156,8 @@ rotLeft key val (Element l invl) (Element (Node key' val' rl rr) (AVLNode invrl 
     Same $ Element (Node key' val' (Node key val l rl) rr)
                    (AVLNode (AVLNode invl invrl Balanced) invrr Balanced)
 
+rotLeft key val a b = ?tempHole
+
 ||| Perform a Right rotation.
 private
 rotRight : k
@@ -187,6 +189,8 @@ rotRight key val (Element (Node key' val' ll (Node key'' val'' lrl lrr))
              (AVLNode invll (AVLNode invlrl invlrr Balanced) RHeavy)) (Element r invr) =
   Same $ Element (Node key'' val'' (Node key' val' ll lrl) (Node key val lrr r))
                  (AVLNode (AVLNode invll invlrl Balanced) (AVLNode invlrr invr Balanced) Balanced)
+
+rotRight key val a b = ?tempHole2
 
 -- --------------------------------------------------------------- [ Insertion ]
 
